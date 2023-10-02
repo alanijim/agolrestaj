@@ -26,7 +26,10 @@
       "esri/layers/FeatureLayer",
       
       //adding editor widget
-      "esri/widgets/Editor"
+      "esri/widgets/Editor",
+
+      // adding legend
+      "esri/widgets/Legend"
 
     ], function (esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Editor) {
 
@@ -180,6 +183,14 @@ const editor = new Editor({
 
 // Add the widget to the view
 view.ui.add(editor, "top-right");
+
+// adding legend
+
+let legend = new Legend({
+  view: view
+});
+
+view.ui.add(legend, "bottom-right");
 
     });
   </script>
